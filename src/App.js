@@ -3,6 +3,8 @@ import React, {
 } from 'react';
 import './App.css';
 import Todos from './components/Todos';
+
+import Header from './components/layout/layout';
 class App extends Component {
 
   state = {
@@ -24,6 +26,17 @@ class App extends Component {
     ]
   }
 
+
+  delTodo=(id)=>{
+   this.setState(
+     {todos:[...this.state.todos.filter(todo=>todo.id!==id)]}
+     
+     
+     )
+
+
+    
+  }
   markComplete=(id)=>{
   this.setState({todos:this.state.todos.map(todo=>{
     if(todo.id===id){
@@ -39,8 +52,8 @@ class App extends Component {
     
     return (
       <div className = "App" >
-      <h1> App </h1> 
-      <Todos todos={this.state.todos} markComplete={this.markComplete}/>
+      <Header/>
+      <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/>
       </div>
     );
   }
