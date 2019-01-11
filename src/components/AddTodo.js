@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
+import PropTypes from 'prop-types';
 class AddTodo extends Component {
  changed=(e)=>{
     
@@ -31,5 +32,11 @@ submited=(e)=>{
     this.setState({title:''})
 }
 }
+AddTodo.prototypes={
+    submited:PropTypes.func.isRequired,
+    changed:PropTypes.func.isRequired
+}
+
+
 
 export default AddTodo;

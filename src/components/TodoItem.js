@@ -35,7 +35,9 @@ const btnStyle={
     padding:'5px 9px'
 }
 TodoItem.prototypes={
-    todo:PropTypes.object.isRequired
+    todo:PropTypes.object.isRequired,
+    markComplete:PropTypes.func.isRequired,
+    delTodo:PropTypes.func.isRequired
 }
 
 
