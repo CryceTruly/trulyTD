@@ -22,9 +22,17 @@ return {
             onChange={this.props.markComplete.bind(this,id)}/>{' '}
         
         {title}</p>
+        <button onClick={this.props.delTodo.bind(this,id)} style={btnStyle}>x</button>
          </div>
       )
   }
+}
+
+
+const btnStyle={
+    backgroundColor:'#ff0000',
+    cursor:'pointer',
+    padding:'5px 9px'
 }
 TodoItem.prototypes={
     todo:PropTypes.object.isRequired
