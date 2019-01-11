@@ -5,6 +5,7 @@ import './App.css';
 import Todos from './components/Todos';
 import AddTodo from './components/AddTodo';
 import Header from './components/layout/layout';
+import uuid from 'uuid';
 class App extends Component {
 
   state = {
@@ -65,7 +66,7 @@ class App extends Component {
 
   addTodo=(title)=>{
     const newTodo={
-      id:4,
+      id:uuid.v4(),
       title,
       completed:false
     }
