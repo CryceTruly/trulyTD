@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 import './App.css';
 import Todos from './components/Todos';
-
+import AddTodo from './components/AddTodo';
 import Header from './components/layout/layout';
 class App extends Component {
 
@@ -53,9 +53,24 @@ class App extends Component {
     return (
       <div className = "App" >
       <Header/>
+      <div className='container'>
+      <AddTodo addTodo={this.addTodo}/>
       <Todos todos={this.state.todos} markComplete={this.markComplete} delTodo={this.delTodo}/>
       </div>
+      
+      </div>
     );
+  }
+
+
+  addTodo=(title)=>{
+    const newTodo={
+      id:4,
+      title,
+      completed:false
+    }
+    return this.setState({todos:[...this.state.todos,newTodo]})
+    
   }
 }
 
